@@ -1,0 +1,48 @@
+维度:
+  episode: 2000
+  step: 1000
+
+变量:
+  episode: shape=(2000,), dtype=int32
+    long_name: Training episode index
+  step: shape=(1000,), dtype=int32
+    long_name: Step index within episode
+  x: shape=(2000, 1000), dtype=float32
+    _FillValue: nan
+    units: grid unit
+    long_name: Agent x-coordinate
+    min=0.0, max=499.0
+  y: shape=(2000, 1000), dtype=float32
+    _FillValue: nan
+    units: grid unit
+    long_name: Agent y-coordinate
+    min=0.0, max=499.0
+  concentration: shape=(2000, 1000), dtype=float32
+    _FillValue: nan
+    long_name: Methane concentration
+    min=0.0, max=100.0
+  is_source: shape=(2000, 1000), dtype=int8
+    _FillValue: 0
+    long_name: Source position flag
+    min=1, max=1
+  source_concentration: shape=(2000,), dtype=float32
+    _FillValue: nan
+    long_name: Actual source concentration in each episode
+    min=100.0, max=100.0
+  source_x: shape=(2000,), dtype=float32
+    _FillValue: nan
+    long_name: Actual source x-coordinate
+    min=50.06705856323242, max=449.9280700683594
+  source_y: shape=(2000,), dtype=float32
+    _FillValue: nan
+    long_name: Actual source y-coordinate
+    min=50.14452362060547, max=449.90216064453125
+  gaussian_sigma: shape=(2000,), dtype=float32
+    long_name: Gaussian distribution standard deviation
+    min=15.0, max=15.0
+  peak_concentration: shape=(2000,), dtype=float32
+    units: ppm
+    long_name: Source peak concentration
+    min=100.0, max=100.0
+
+文件检查完毕。
