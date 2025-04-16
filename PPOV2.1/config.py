@@ -42,8 +42,3 @@ BOUNDARY_DECAY_START = 0.15
 
 # 训练参数
 TRAINING_SIZE = 10 # 训练集大小
-
-# 验证参数
-SUCCESS_DISTANCE_THRESHOLD = 40  # 成功距离阈值
-EVALUATE_SIZE= 10  # 验证集大小
-
