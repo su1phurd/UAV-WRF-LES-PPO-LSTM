@@ -1,0 +1,22 @@
+## **代码结构总结**
+
+- **环境文件（例如`environment.py`）**：包括`MethaneEnv`类的定义。
+- **模型文件（例如`model.py`）**：包括`PPOActorCritic`类的定义。
+- **训练脚本（例如`train_ppo.py`）**：包括训练模型的代码，并在训练结束后保存模型参数。
+- **专家数据生成脚本（`generate_expert_data.py`）**：加载训练好的模型，运行模型以收集专家数据，并保存到文件。
+- **主训练脚本（例如`train_ppo_gail.py`）**：加载专家数据，实施GAIL算法，并进行策略训练。
+
+**文件夹结构示例：**
+
+```
+your_project_folder/
+├── environment.py           # 包含MethaneEnv类
+├── model.py                 # 包含PPOActorCritic类
+├── train_ppo.py             # 训练PPO模型的脚本
+├── generate_expert_data.py  # 生成专家数据的脚本
+├── train_ppo_gail.py        # 使用GAIL训练的脚本
+├── expert_data.npz          # 生成的专家数据文件
+└── ppo_model.pth            # 保存的模型参数文件
+```
+
+---
