@@ -1,1 +1,71 @@
-PPOV2.0
+config.py 参数设置
+enviroment.py 简单湍流高斯羽流场生成；定义强化学习奖励的定义、权重；
+model.py   各种模型
+netcdf_writer.py nc文件
+train_ppo2.0.py 课程学习的帮助下训练2000次，train_ppo2.0.py
+train_lstm.py 训练LSTM模型，用于预测浓度阈值。
+evaluate_with_lstm.py 加载训练好的PPO模型和LSTM模型，进行验证。输出平均偏差和成功率。输出一个ppo模型、2000次训练奖励情况进而微调参数和2000次轨迹浓度
+
+PS E:\2025_project\dai\ppo\ppo2.0> & E:/anaconda/python.exe e:/2025_project/dai/ppo/ppo2.0/evaluate_with_lstm.py
+Ep 050 | 近期成功率 52.0% | 平均步数 514.0
+Ep 100 | 近期成功率 70.0% | 平均步数 392.7
+Ep 150 | 近期成功率 48.0% | 平均步数 603.1
+Ep 200 | 近期成功率 62.0% | 平均步数 453.4
+Ep 250 | 近期成功率 54.0% | 平均步数 534.6
+Ep 300 | 近期成功率 48.0% | 平均步数 586.4
+Ep 350 | 近期成功率 56.0% | 平均步数 523.5
+Ep 400 | 近期成功率 62.0% | 平均步数 477.7
+Ep 450 | 近期成功率 60.0% | 平均步数 487.8
+Ep 500 | 近期成功率 52.0% | 平均步数 552.7
+Ep 550 | 近期成功率 64.0% | 平均步数 469.7
+Ep 600 | 近期成功率 54.0% | 平均步数 510.2
+Ep 650 | 近期成功率 54.0% | 平均步数 525.7
+Ep 700 | 近期成功率 54.0% | 平均步数 549.3
+Ep 750 | 近期成功率 54.0% | 平均步数 508.4
+Ep 800 | 近期成功率 58.0% | 平均步数 478.7
+Ep 850 | 近期成功率 52.0% | 平均步数 557.1
+Ep 900 | 近期成功率 64.0% | 平均步数 435.1
+Ep 950 | 近期成功率 62.0% | 平均步数 483.0
+Ep 1000 | 近期成功率 60.0% | 平均步数 504.3
+===== 综合验证结果 =====
+平均定位偏差: 117.05 ± 94.92 像素
+总体成功率: 57.0%
+E:\anaconda\lib\site-packages\numpy\core\fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+E:\anaconda\lib\site-packages\numpy\core\_methods.py:129: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+E:\anaconda\lib\site-packages\numpy\core\fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+E:\anaconda\lib\site-packages\numpy\core\_methods.py:129: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+提前终止率: nan%
+平均运行步数: 507.4
+
+
+PS E:\2025_project\dai\ppo\ppo2.0> & E:/anaconda/python.exe e:/2025_project/dai/ppo/ppo2.0/evaluate_with_lstm.py
+Ep 050 | 近期成功率 26.0% | 平均步数 438.7
+Ep 100 | 近期成功率 20.0% | 平均步数 600.1
+Ep 150 | 近期成功率 14.0% | 平均步数 596.5
+Ep 200 | 近期成功率 34.0% | 平均步数 445.3
+Ep 250 | 近期成功率 24.0% | 平均步数 413.7
+Ep 300 | 近期成功率 12.0% | 平均步数 517.8
+Ep 350 | 近期成功率 22.0% | 平均步数 389.4
+Ep 400 | 近期成功率 24.0% | 平均步数 494.0
+Ep 450 | 近期成功率 22.0% | 平均步数 561.8
+Ep 500 | 近期成功率 22.0% | 平均步数 498.6
+Ep 550 | 近期成功率 28.0% | 平均步数 539.8
+Ep 600 | 近期成功率 12.0% | 平均步数 578.7
+Ep 650 | 近期成功率 14.0% | 平均步数 653.4
+Ep 700 | 近期成功率 28.0% | 平均步数 428.4
+Ep 750 | 近期成功率 18.0% | 平均步数 553.1
+Ep 800 | 近期成功率 28.0% | 平均步数 508.4
+Ep 850 | 近期成功率 24.0% | 平均步数 462.2
+Ep 900 | 近期成功率 20.0% | 平均步数 457.6
+Ep 950 | 近期成功率 24.0% | 平均步数 421.1
+Ep 1000 | 近期成功率 18.0% | 平均步数 546.7
+===== 综合验证结果 =====
+平均定位偏差: 116.67 ± 94.13 像素
+成功案例平均偏差: 34.33 ± 3.95 像素
+总体成功率: 21.7%
+提前终止率: 0.0%
+平均运行步数: 505.3
